@@ -155,6 +155,7 @@ def main():
                 gameWin.close()
                 controlWin.close()
                 gameOn = False
+                return False
             # NewGame Condition:
             elif (90 > controlClick.getX() > 10) and (190 > controlClick.getY() > 160):
                 # Username check
@@ -189,7 +190,7 @@ def main():
                                     #Closing the windows
                                     gameWin.close()
                                     controlWin.close()
-                                    break
+                                    return False
                                 # New Game Condition
                                 elif (90 > controlClick.getX() > 10) and (190 > controlClick.getY() > 160):
                                     gameWin.close()
@@ -221,7 +222,7 @@ def main():
                                                             gameWin.close()
                                                             controlWin.close()
                                                             gameOn = False
-                                                            break
+                                                            return False
                                                         # New Game Condition
                                                         elif (90 > controlClick.getX() > 10) and (190 > controlClick.getY() > 160):
                                                             gameWin.close()
@@ -237,7 +238,7 @@ def main():
                         print(roundCount)
                         #Disappearing gold ball
                         circles[goldenIndex].undraw()
-                        #Message indicating the end of the round
+                        #Message indicating the end of the round if the window isn't exited
                         finText = Text(Point(240,260), "Click To Continue To The Next Round!")
                         finText.draw(gameWin)
                         gameWin.getMouse()
